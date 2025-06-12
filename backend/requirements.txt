@@ -1,0 +1,6 @@
+# Production dependencies for Aurora Nowcast NZ - Backend
+boto3>=1.34.0
+numpy>=1.24.3
+pandas>=2.0.3
+requests>=2.31.0
+python-dateutil>=2.8.2

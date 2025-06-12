@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Nowcast NZ - Real-time Aurora Visibility for New Zealand</title>
+    <meta name="description" content="Real-time aurora visibility alerts for New Zealand using GeoNet geomagnetic data">
+
+    <!-- React and Babel for JSX transformation -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom styles -->
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-color: var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .status-indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .status-indicator.level-0 {
+            background-color: #6b7280;
+            animation: none;
+        }
+
+        .status-indicator.level-1 {
+            background-color: #f59e0b;
+        }
+
+        .status-indicator.level-2 {
+            background-color: #dc2626;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: .7;
+            }
+        }
+
+        .region-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useCallback } = React;
+
+        // Theme management
+        const useTheme = () => {
+            const [theme, setTheme] = useState(() => {
+                const saved = localStorage.getItem('aurora-theme');
+                if (saved) return saved;
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            });
+
+            useEffect(() => {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('aurora-theme', theme);
+            }, [theme]);
+
+            const toggleTheme = () => {
+                setTheme(prev => prev === 'light' ? 'dark' : 'light');
+            };
+
+            return { theme, toggleTheme };
+        };
+
+        // Header component
+        const Header = ({ theme, toggleTheme }) => (
+            <header className="card border-b mb-8 p-6">
+                <div className="max-w-6xl mx-auto flex justify-between items-center">
+                    <div>
+                        <h1 className="text-3xl font-bold text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            Aurora Nowcast NZ
+                        </h1>
+                        <p className="text-lg text-gray-600 dark:text-gray-300 mt-1">
+                            Real-time aurora visibility for New Zealand
+                        </p>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                        <a
+                            href="https://github.com/jajera/aurora-nz-nowcast"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                        >
+                            GitHub
+                        </a>
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                            aria-label="Toggle theme"
+                        >
+                            {theme === 'light' ? '🌙' : '☀️'}
+                        </button>
+                    </div>
+                </div>
+            </header>
+        );
+
+        // Status indicator component
+        const StatusIndicator = ({ level, status }) => (
+            <div className="flex items-center">
+                <span className={`status-indicator level-${level}`}></span>
+                <span className="font-medium">{status}</span>
+            </div>
+        );
+
+        // Region card component
+        const RegionCard = ({ region, data }) => (
+            <div className="region-card card border rounded-lg p-6 fade-in">
+                <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-semibold">{data.display_name}</h3>
+                    <StatusIndicator level={data.level} status={data.status} />
+                </div>
+
+                <div className="space-y-3">
+                    <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-400">Current dB/dt:</span>
+                        <span className="font-mono">{data.dbdt_value} nT/min</span>
+                    </div>
+
+                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                        <div>Possible aurora: ≥{data.threshold_no_activity} nT/min</div>
+                        <div>Strong activity: ≥{data.threshold_possible} nT/min</div>
+                    </div>
+
+                    {data.contributing_stations.length > 0 && (
+                        <div className="text-xs text-gray-400 dark:text-gray-500">
+                            Data from: {data.contributing_stations.join(', ')}
+                        </div>
+                    )}
+                </div>
+            </div>
+        );
+
+        // Info panel component
+        const InfoPanel = ({ isOpen, onToggle }) => (
+            <div className="mb-6">
+                <button
+                    onClick={onToggle}
+                    className="w-full card border rounded-lg p-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                >
+                    <div className="flex justify-between items-center">
+                        <h2 className="text-lg font-semibold">About Aurora Nowcasting</h2>
+                        <span className="text-2xl">{isOpen ? '−' : '+'}</span>
+                    </div>
+                </button>
+
+                {isOpen && (
+                    <div className="card border border-t-0 rounded-t-none rounded-lg p-6 fade-in">
+                        <div className="prose dark:prose-invert max-w-none">
+                            <p className="mb-4">
+                                This system monitors real-time geomagnetic data from GeoNet's magnetometer stations
+                                to predict aurora visibility across New Zealand regions.
+                            </p>
+
+                            <h3 className="text-lg font-semibold mb-2">How it works:</h3>
+                            <ul className="list-disc list-inside space-y-1 mb-4">
+                                <li>Fetches 1Hz magnetometer data from GeoNet's open data S3 bucket</li>
+                                <li>Calculates dB/dt (rate of magnetic field change) in nanoTesla per minute</li>
+                                <li>Higher dB/dt values indicate geomagnetic disturbances that can produce auroras</li>
+                                <li>Different thresholds apply to different regions based on magnetic latitude</li>
+                            </ul>
+
+                            <h3 className="text-lg font-semibold mb-2">Status Levels:</h3>
+                            <div className="space-y-2">
+                                <div className="flex items-center">
+                                    <StatusIndicator level={0} status="No Activity" />
+                                    <span className="ml-4 text-gray-600 dark:text-gray-400">- Low geomagnetic activity</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <StatusIndicator level={1} status="Possible Aurora" />
+                                    <span className="ml-4 text-gray-600 dark:text-gray-400">- Moderate activity, auroras possible</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <StatusIndicator level={2} status="Strong Activity" />
+                                    <span className="ml-4 text-gray-600 dark:text-gray-400">- High activity, auroras likely visible</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+
+        // Main app component
+        const AuroraNowcastApp = () => {
+            const { theme, toggleTheme } = useTheme();
+            const [data, setData] = useState(null);
+            const [loading, setLoading] = useState(true);
+            const [error, setError] = useState(null);
+            const [lastUpdate, setLastUpdate] = useState(null);
+            const [infoOpen, setInfoOpen] = useState(false);
+
+            const fetchData = useCallback(async () => {
+                try {
+                    const response = await fetch('./status.json?' + new Date().getTime());
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch data');
+                    }
+                    const jsonData = await response.json();
+                    setData(jsonData);
+                    setLastUpdate(new Date());
+                    setError(null);
+                } catch (err) {
+                    setError(err.message);
+                    console.error('Error fetching data:', err);
+                } finally {
+                    setLoading(false);
+                }
+            }, []);
+
+            useEffect(() => {
+                fetchData();
+                const interval = setInterval(fetchData, 15 * 60 * 1000); // Update every 15 minutes
+                return () => clearInterval(interval);
+            }, [fetchData]);
+
+            if (loading) {
+                return (
+                    <div className="min-h-screen flex items-center justify-center">
+                        <div className="text-center">
+                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                            <p className="text-gray-600 dark:text-gray-400">Loading aurora data...</p>
+                        </div>
+                    </div>
+                );
+            }
+
+            if (error) {
+                return (
+                    <div className="min-h-screen flex items-center justify-center">
+                        <div className="card border rounded-lg p-8 text-center max-w-md">
+                            <div className="text-red-500 text-5xl mb-4">⚠️</div>
+                            <h2 className="text-xl font-semibold mb-2">Data Unavailable</h2>
+                            <p className="text-gray-600 dark:text-gray-400 mb-4">
+                                Unable to fetch current aurora data. Please try again later.
+                            </p>
+                            <button
+                                onClick={fetchData}
+                                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                            >
+                                Retry
+                            </button>
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="min-h-screen">
+                    <Header theme={theme} toggleTheme={toggleTheme} />
+
+                    <main className="max-w-6xl mx-auto px-6 pb-12">
+                        <InfoPanel isOpen={infoOpen} onToggle={() => setInfoOpen(!infoOpen)} />
+
+                        {/* Status grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                            {Object.entries(data.regions).map(([region, regionData]) => (
+                                <RegionCard key={region} region={region} data={regionData} />
+                            ))}
+                        </div>
+
+                        {/* Update info */}
+                        <div className="card border rounded-lg p-4 text-center text-sm text-gray-600 dark:text-gray-400">
+                            <div className="mb-2">
+                                Last updated: {data.last_updated}
+                            </div>
+                            <div>
+                                Next update: {new Date(data.next_update).toLocaleString()}
+                            </div>
+                            <div className="mt-2 text-xs">
+                                Data sourced from GeoNet magnetometer stations
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        // Render the app
+        ReactDOM.render(<AuroraNowcastApp />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
