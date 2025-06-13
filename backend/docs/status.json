@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-06-12T10:39:33.051432+00:00",
+  "last_updated": "2025-06-12 10:39:33 UTC",
+  "regions": {
+    "Auckland": {
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 29.33,
+      "threshold_no_activity": 40.0,
+      "threshold_possible": 100.0,
+      "contributing_stations": [
+        "AHAM",
+        "APIM",
+        "EY2M",
+        "SMHS"
+      ],
+      "display_name": "Auckland"
+    },
+    "Canterbury": {
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 29.33,
+      "threshold_no_activity": 30.0,
+      "threshold_possible": 75.0,
+      "contributing_stations": [
+        "AHAM",
+        "APIM",
+        "EY2M",
+        "SMHS"
+      ],
+      "display_name": "Canterbury"
+    },
+    "Otago": {
+      "status": "Possible Aurora",
+      "level": 1,
+      "color": "#f59e0b",
+      "dbdt_value": 29.33,
+      "threshold_no_activity": 24.0,
+      "threshold_possible": 60.0,
+      "contributing_stations": [
+        "AHAM",
+        "APIM",
+        "EY2M",
+        "SMHS"
+      ],
+      "display_name": "Otago"
+    },
+    "Southland": {
+      "status": "Possible Aurora",
+      "level": 1,
+      "color": "#f59e0b",
+      "dbdt_value": 29.33,
+      "threshold_no_activity": 20.0,
+      "threshold_possible": 50.0,
+      "contributing_stations": [
+        "AHAM",
+        "APIM",
+        "EY2M",
+        "SMHS"
+      ],
+      "display_name": "Southland"
+    },
+    "Stewart Island": {
+      "status": "Possible Aurora",
+      "level": 1,
+      "color": "#f59e0b",
+      "dbdt_value": 29.33,
+      "threshold_no_activity": 16.0,
+      "threshold_possible": 40.0,
+      "contributing_stations": [
+        "AHAM",
+        "APIM",
+        "EY2M",
+        "SMHS"
+      ],
+      "display_name": "Stewart Island"
+    }
+  },
+  "raw_data": {
+    "stations": {
+      "AHAM": {
+        "name": "Ahaura Magnetic Observatory",
+        "dbdt": 12.389999999999418,
+        "data_points": 44640
+      },
+      "APIM": {
+        "name": "API Magnetic Observatory",
+        "dbdt": 0.8400000000001455,
+        "data_points": 44638
+      },
+      "EY2M": {
+        "name": "Eyrewell Magnetic Observatory",
+        "dbdt": 1.0200000000040745,
+        "data_points": 44640
+      },
+      "SMHS": {
+        "name": "Scott Base Magnetic Observatory",
+        "dbdt": 29.329999999999927,
+        "data_points": 44640
+      }
+    }
+  },
+  "thresholds": {
+    "no_activity": 20,
+    "possible": 50
+  },
+  "next_update": "2025-06-12T10:54:33.051471+00:00"
+}
