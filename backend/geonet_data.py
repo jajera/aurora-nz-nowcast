@@ -237,7 +237,7 @@ class GeoNetDataProcessor:
 
     def determine_aurora_status(self, dbdt_values: Dict[str, float]) -> Dict[str, Dict]:
         """
-        Determine aurora activity status for each region.
+        Determine aurora activity status for each region using geographically relevant stations.
 
         Args:
             dbdt_values: Dictionary mapping station codes to dB/dt values
@@ -245,6 +245,45 @@ class GeoNetDataProcessor:
         Returns:
             Dictionary with regional aurora status information
         """
+        # Station relevance to regions (higher weight = more relevant)
+        station_weights = {
+            'Auckland': {
+                'APIM': 1.0,  # Local Auckland station
+                'AHAM': 0.5,  # Canterbury stations have some relevance
+                'EY2M': 0.5,
+                'EYWM': 0.5,
+                'SMHS': 0.1   # Antarctica has minimal relevance to Auckland
+            },
+            'Canterbury': {
+                'AHAM': 1.0,  # Local Canterbury stations
+                'EY2M': 1.0,
+                'EYWM': 1.0,
+                'APIM': 0.3,  # Auckland less relevant
+                'SMHS': 0.2   # Antarctica somewhat relevant
+            },
+            'Otago': {
+                'AHAM': 0.8,  # Canterbury stations quite relevant
+                'EY2M': 0.8,
+                'EYWM': 0.8,
+                'APIM': 0.2,  # Auckland less relevant
+                'SMHS': 0.4   # Antarctica more relevant for southern regions
+            },
+            'Southland': {
+                'AHAM': 0.6,  # Canterbury stations moderately relevant
+                'EY2M': 0.6,
+                'EYWM': 0.6,
+                'APIM': 0.1,  # Auckland minimal relevance
+                'SMHS': 0.7   # Antarctica quite relevant for far south
+            },
+            'Stewart Island': {
+                'AHAM': 0.4,  # Canterbury stations less relevant
+                'EY2M': 0.4,
+                'EYWM': 0.4,
+                'APIM': 0.05, # Auckland minimal relevance
+                'SMHS': 0.9   # Antarctica very relevant for Stewart Island
+            }
+        }
+
         regional_status = {}
 
         for region, config in REGION_MAPPING.items():
@@ -252,23 +291,28 @@ class GeoNetDataProcessor:
             adjusted_no_activity = THRESHOLDS['no_activity'] * multiplier
             adjusted_possible = THRESHOLDS['possible'] * multiplier
 
-            # Find the maximum dB/dt value affecting this region
-            max_dbdt = 0.0
+            # Calculate weighted average dB/dt for this region
+            weighted_dbdt = 0.0
+            total_weight = 0.0
             contributing_stations = []
 
             for station_code, dbdt in dbdt_values.items():
-                if station_code in MAGNETOMETER_STATIONS:
-                    station_region = MAGNETOMETER_STATIONS[station_code]['region']
-                    # For now, use all stations for all regions (can be refined)
-                    max_dbdt = max(max_dbdt, dbdt)
-                    contributing_stations.append(station_code)
+                if station_code in MAGNETOMETER_STATIONS and station_code in station_weights[region]:
+                    weight = station_weights[region][station_code]
+                    weighted_dbdt += dbdt * weight
+                    total_weight += weight
+                    if dbdt > 0:  # Only count stations with data
+                        contributing_stations.append(station_code)
+
+            # Use weighted average, or 0 if no relevant stations
+            region_dbdt = weighted_dbdt / total_weight if total_weight > 0 else 0.0
 
             # Determine status
-            if max_dbdt < adjusted_no_activity:
+            if region_dbdt < adjusted_no_activity:
                 status = "No Activity"
                 level = 0
                 color = "#6b7280"  # Gray
-            elif max_dbdt < adjusted_possible:
+            elif region_dbdt < adjusted_possible:
                 status = "Possible Aurora"
                 level = 1
                 color = "#f59e0b"  # Yellow/Orange
@@ -281,7 +325,7 @@ class GeoNetDataProcessor:
                 'status': status,
                 'level': level,
                 'color': color,
-                'dbdt_value': round(max_dbdt, 2),
+                'dbdt_value': round(region_dbdt, 2),
                 'threshold_no_activity': round(adjusted_no_activity, 2),
                 'threshold_possible': round(adjusted_possible, 2),
                 'contributing_stations': contributing_stations,
