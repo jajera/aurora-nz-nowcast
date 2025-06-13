@@ -24,6 +24,11 @@ jobs:
         # Use a token that can push back to the repo
         token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
