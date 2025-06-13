@@ -123,10 +123,13 @@ class GeoNetDataProcessor:
             now = datetime.now(timezone.utc)
             recent_cutoff = now - timedelta(days=days_back)
 
+            recent_months = {
+                (now - timedelta(days=30 * i)).strftime("%Y-%m") for i in range(3)
+            }
+
             for obj in response['Contents']:
                 key = obj['Key']
-                # Look for recent files (December 2024 or later)
-                if any(month in key for month in ['2024-12', '2024-11', '2025-01']):
+                if any(month in key for month in recent_months):
                     files.append(key)
 
             return sorted(files)
