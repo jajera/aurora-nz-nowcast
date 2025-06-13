@@ -74,9 +74,9 @@ jobs:
           echo "Aurora data updated and committed"
         fi
 
-    - name: Upload artifacts (for debugging)
+    - name: Upload artifacts
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: aurora-data-logs
         path: |
