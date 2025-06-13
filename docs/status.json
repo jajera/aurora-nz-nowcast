@@ -1,7 +1,17 @@
 {
-  "timestamp": "2024-01-15T12:00:00Z",
-  "last_updated": "2024-01-15 12:00:00 UTC",
+  "timestamp": "2024-12-19T12:00:00Z",
+  "last_updated": "2024-12-19 12:00:00 UTC",
   "regions": {
+    "Auckland": {
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 8.5,
+      "threshold_no_activity": 40.0,
+      "threshold_possible": 100.0,
+      "contributing_stations": ["APIM"],
+      "display_name": "Auckland"
+    },
     "Canterbury": {
       "status": "No Activity",
       "level": 0,
@@ -9,7 +19,7 @@
       "dbdt_value": 15.2,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
-      "contributing_stations": ["EYR", "MCH"],
+      "contributing_stations": ["AHAM", "EY2M", "EYWM"],
       "display_name": "Canterbury"
     },
     "Otago": {
@@ -19,7 +29,7 @@
       "dbdt_value": 35.8,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
-      "contributing_stations": ["EYR", "MCH"],
+      "contributing_stations": ["AHAM", "EY2M", "EYWM"],
       "display_name": "Otago"
     },
     "Southland": {
@@ -29,7 +39,7 @@
       "dbdt_value": 65.3,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
-      "contributing_stations": ["EYR", "MCH"],
+      "contributing_stations": ["AHAM", "EY2M", "EYWM"],
       "display_name": "Southland"
     },
     "Stewart Island": {
@@ -39,21 +49,36 @@
       "dbdt_value": 65.3,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
-      "contributing_stations": ["EYR", "MCH"],
+      "contributing_stations": ["AHAM", "EY2M", "EYWM"],
       "display_name": "Stewart Island"
     }
   },
   "raw_data": {
     "stations": {
-      "EYR": {
-        "name": "Eyrewell",
-        "dbdt": 45.2,
-        "data_points": 900
+      "APIM": {
+        "name": "API Magnetic Observatory",
+        "dbdt": 8.5,
+        "data_points": 1440
       },
-      "MCH": {
-        "name": "Magnetic Observatory Christchurch",
-        "dbdt": 52.8,
-        "data_points": 850
+      "AHAM": {
+        "name": "Ahaura Magnetic Observatory",
+        "dbdt": 32.1,
+        "data_points": 1440
+      },
+      "EY2M": {
+        "name": "Eyrewell Magnetic Observatory",
+        "dbdt": 45.2,
+        "data_points": 1440
+      },
+      "EYWM": {
+        "name": "Eyrewell West Magnetic Observatory",
+        "dbdt": 38.9,
+        "data_points": 1440
+      },
+      "SMHS": {
+        "name": "Scott Base Magnetic Observatory",
+        "dbdt": 12.3,
+        "data_points": 1440
       }
     }
   },
@@ -61,5 +86,5 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2024-01-15T12:15:00Z"
+  "next_update": "2024-12-19T12:15:00Z"
 }
