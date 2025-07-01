@@ -1,14 +1,14 @@
 {
-  "timestamp": "2025-07-01T07:17:28.372179+00:00",
-  "last_updated": "2025-07-01 07:17:28 UTC",
-  "run_id": "9a81aeb1-8d20-442a-a16e-6e8a9ed47782",
-  "timestamp_ms": 1751354248372,
+  "timestamp": "2025-07-01T07:41:45.809151+00:00",
+  "last_updated": "2025-07-01 07:41:45 UTC",
+  "run_id": "d64a839a-d3cb-4ff5-9d46-db006001ef2a",
+  "timestamp_ms": 1751355705809,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 22.43,
+      "dbdt_value": 1.26,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
@@ -21,10 +21,10 @@
       "display_name": "Auckland"
     },
     "Canterbury": {
-      "status": "Possible Aurora",
-      "level": 1,
-      "color": "#f59e0b",
-      "dbdt_value": 33.13,
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 1.72,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -37,10 +37,10 @@
       "display_name": "Canterbury"
     },
     "Otago": {
-      "status": "Strong Activity Detected",
-      "level": 2,
-      "color": "#dc2626",
-      "dbdt_value": 73.23,
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 2.36,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -53,10 +53,10 @@
       "display_name": "Otago"
     },
     "Southland": {
-      "status": "Strong Activity Detected",
-      "level": 2,
-      "color": "#dc2626",
-      "dbdt_value": 144.72,
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 3.51,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -69,10 +69,10 @@
       "display_name": "Southland"
     },
     "Stewart Island": {
-      "status": "Strong Activity Detected",
-      "level": 2,
-      "color": "#dc2626",
-      "dbdt_value": 223.26,
+      "status": "No Activity",
+      "level": 0,
+      "color": "#6b7280",
+      "dbdt_value": 4.75,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -89,32 +89,32 @@
     "stations": {
       "AHAM": {
         "name": "Ahaura Magnetic Observatory",
-        "dbdt": 7.619999999995343,
-        "data_points": 44640,
+        "dbdt": 2.2600000000020373,
+        "data_points": 43200,
         "status": "real_data"
       },
       "APIM": {
         "name": "API Magnetic Observatory",
-        "dbdt": 0.3899999999994179,
-        "data_points": 44635,
+        "dbdt": 0.3099999999976717,
+        "data_points": 43194,
         "status": "real_data"
       },
       "EY2M": {
         "name": "Eyrewell Magnetic Observatory",
-        "dbdt": 1.6599999999962165,
-        "data_points": 44640,
+        "dbdt": 0.46000000000640284,
+        "data_points": 43200,
         "status": "real_data"
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 0.8,
+        "dbdt": 1.29,
         "data_points": 0,
         "status": "demo_data"
       },
       "SMHS": {
         "name": "Scott Base Magnetic Observatory",
-        "dbdt": 528.8399999999992,
-        "data_points": 44640,
+        "dbdt": 9.539999999999964,
+        "data_points": 43200,
         "status": "real_data"
       }
     }
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-07-01T07:32:28.372179+00:00",
+  "next_update": "2025-07-01T07:56:45.809151+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1751354248372,
-    "process_duration_seconds": 3.293
+    "generated_at_ms": 1751355705809,
+    "process_duration_seconds": 3.739
   }
 }
