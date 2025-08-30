@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-30T18:43:08.212471+00:00",
-  "last_updated": "2025-08-30 18:43:08 UTC",
-  "run_id": "91844512-d50d-4c16-a8ec-f7f0b7e1ad82",
-  "timestamp_ms": 1756579388212,
+  "timestamp": "2025-08-30T18:51:42.025466+00:00",
+  "last_updated": "2025-08-30 18:51:42 UTC",
+  "run_id": "24c20211-61c1-4b44-9254-e935feb0b424",
+  "timestamp_ms": 1756579902025,
   "regions": {
     "Auckland": {
       "status": "No Activity",
@@ -56,7 +56,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 8.95,
+      "dbdt_value": 8.96,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -107,7 +107,7 @@
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 1.49,
+        "dbdt": 1.5,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-08-30T18:58:08.212471+00:00",
+  "next_update": "2025-08-30T19:06:42.025466+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1756579388212,
-    "process_duration_seconds": 2.75
+    "generated_at_ms": 1756579902025,
+    "process_duration_seconds": 2.642
   }
 }
