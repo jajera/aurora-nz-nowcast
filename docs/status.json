@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-09-10T18:45:47.730514+00:00",
-  "last_updated": "2025-09-10 18:45:47 UTC",
-  "run_id": "e945842a-2c39-4cc5-9958-186f74aadab8",
-  "timestamp_ms": 1757529947730,
+  "timestamp": "2025-09-10T19:11:58.550231+00:00",
+  "last_updated": "2025-09-10 19:11:58 UTC",
+  "run_id": "c7ce9448-ea2c-4ce8-9f60-2416a07b9275",
+  "timestamp_ms": 1757531518550,
   "regions": {
     "Auckland": {
       "status": "No Activity",
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-09-10T19:00:47.730514+00:00",
+  "next_update": "2025-09-10T19:26:58.550231+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1757529947730,
-    "process_duration_seconds": 3.004
+    "generated_at_ms": 1757531518550,
+    "process_duration_seconds": 3.584
   }
 }
