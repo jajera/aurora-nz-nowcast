@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-09-22T15:16:59.020915+00:00",
-  "last_updated": "2025-09-22 15:16:59 UTC",
-  "run_id": "a7b59fc8-cd65-4b12-8d48-9b7a0b4273c7",
-  "timestamp_ms": 1758554219020,
+  "timestamp": "2025-09-22T15:39:37.499857+00:00",
+  "last_updated": "2025-09-22 15:39:37 UTC",
+  "run_id": "438c2b53-c904-4375-a23c-0593687f7179",
+  "timestamp_ms": 1758555577499,
   "regions": {
     "Auckland": {
       "status": "No Activity",
@@ -24,7 +24,7 @@
       "status": "Possible Aurora",
       "level": 1,
       "color": "#f59e0b",
-      "dbdt_value": 46.27,
+      "dbdt_value": 46.28,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -40,7 +40,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 104.93,
+      "dbdt_value": 104.94,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -56,7 +56,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 209.54,
+      "dbdt_value": 209.55,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -72,7 +72,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 324.5,
+      "dbdt_value": 324.51,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -107,7 +107,7 @@
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 1.85,
+        "dbdt": 1.89,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-09-22T15:31:59.020915+00:00",
+  "next_update": "2025-09-22T15:54:37.499857+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1758554219020,
-    "process_duration_seconds": 2.718
+    "generated_at_ms": 1758555577499,
+    "process_duration_seconds": 3.68
   }
 }
