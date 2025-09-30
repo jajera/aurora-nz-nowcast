@@ -1,14 +1,14 @@
 {
-  "timestamp": "2025-09-29T23:49:19.815475+00:00",
-  "last_updated": "2025-09-29 23:49:19 UTC",
-  "run_id": "bd65f110-c7fe-46a0-8574-ba476790ed3b",
-  "timestamp_ms": 1759189759815,
+  "timestamp": "2025-09-30T01:10:44.396891+00:00",
+  "last_updated": "2025-09-30 01:10:44 UTC",
+  "run_id": "9b7da4ce-f936-4e3e-9135-31fb5b57c06d",
+  "timestamp_ms": 1759194644396,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 31.39,
+      "dbdt_value": 31.22,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
@@ -24,7 +24,7 @@
       "status": "Possible Aurora",
       "level": 1,
       "color": "#f59e0b",
-      "dbdt_value": 46.29,
+      "dbdt_value": 46.04,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -40,7 +40,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 104.95,
+      "dbdt_value": 104.71,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -56,7 +56,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 209.56,
+      "dbdt_value": 209.35,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -72,7 +72,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 324.52,
+      "dbdt_value": 324.35,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -101,13 +101,13 @@
       },
       "EY2M": {
         "name": "Eyrewell Magnetic Observatory",
-        "dbdt": 0.41999999999825377,
-        "data_points": 44586,
+        "dbdt": 0.9799999999999969,
+        "data_points": 44640,
         "status": "real_data"
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 1.93,
+        "dbdt": 0.48,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-09-30T00:04:19.815475+00:00",
+  "next_update": "2025-09-30T01:25:44.396891+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1759189759815,
-    "process_duration_seconds": 2.906
+    "generated_at_ms": 1759194644396,
+    "process_duration_seconds": 3.681
   }
 }
