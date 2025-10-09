@@ -1,14 +1,14 @@
 {
-  "timestamp": "2025-10-09T03:46:44.895134+00:00",
-  "last_updated": "2025-10-09 03:46:44 UTC",
-  "run_id": "a3780081-a7e5-45c1-a05c-7f1b2d1ee552",
-  "timestamp_ms": 1759981604895,
+  "timestamp": "2025-10-09T04:18:35.184035+00:00",
+  "last_updated": "2025-10-09 04:18:35 UTC",
+  "run_id": "db818d49-bd1c-429c-bd48-d5c065c9e66b",
+  "timestamp_ms": 1759983515184,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 33.51,
+      "dbdt_value": 33.6,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
@@ -24,7 +24,7 @@
       "status": "Possible Aurora",
       "level": 1,
       "color": "#f59e0b",
-      "dbdt_value": 49.78,
+      "dbdt_value": 49.91,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -40,7 +40,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 111.03,
+      "dbdt_value": 111.15,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -56,7 +56,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 220.25,
+      "dbdt_value": 220.35,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -72,7 +72,7 @@
       "status": "Strong Activity Detected",
       "level": 2,
       "color": "#dc2626",
-      "dbdt_value": 340.23,
+      "dbdt_value": 340.32,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -107,7 +107,7 @@
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 0.81,
+        "dbdt": 1.27,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-10-09T04:01:44.895134+00:00",
+  "next_update": "2025-10-09T04:33:35.184035+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1759981604895,
-    "process_duration_seconds": 2.707
+    "generated_at_ms": 1759983515184,
+    "process_duration_seconds": 3.111
   }
 }
