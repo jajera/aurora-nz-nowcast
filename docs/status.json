@@ -1,14 +1,14 @@
 {
-  "timestamp": "2025-11-20T04:54:01.566038+00:00",
-  "last_updated": "2025-11-20 04:54:01 UTC",
-  "run_id": "7174314d-72e8-4da3-bdac-8dc09a6d68f4",
-  "timestamp_ms": 1763614441566,
+  "timestamp": "2025-11-20T05:16:22.550959+00:00",
+  "last_updated": "2025-11-20 05:16:22 UTC",
+  "run_id": "f6092653-eabe-4b49-b996-264f17d09376",
+  "timestamp_ms": 1763615782550,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 3.71,
+      "dbdt_value": 3.7,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
@@ -23,7 +23,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 5.51,
+      "dbdt_value": 5.5,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -38,7 +38,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 7.5,
+      "dbdt_value": 7.49,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -68,7 +68,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 14.83,
+      "dbdt_value": 14.82,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -102,7 +102,7 @@
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 1.65,
+        "dbdt": 1.62,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -118,12 +118,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-11-20T05:09:01.566038+00:00",
+  "next_update": "2025-11-20T05:31:22.550959+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1763614441566,
-    "process_duration_seconds": 3.486
+    "generated_at_ms": 1763615782550,
+    "process_duration_seconds": 3.674
   }
 }
