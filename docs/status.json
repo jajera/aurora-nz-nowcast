@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-12-24T17:14:10.112902+00:00",
-  "last_updated": "2025-12-24 17:14:10 UTC",
-  "run_id": "08ac1af7-ea0e-4059-8f66-518fd87bb176",
-  "timestamp_ms": 1766596450112,
+  "timestamp": "2025-12-24T17:33:07.600897+00:00",
+  "last_updated": "2025-12-24 17:33:07 UTC",
+  "run_id": "c0ecb9c3-1724-460e-8a4a-bacff5c1a25f",
+  "timestamp_ms": 1766597587600,
   "regions": {
     "Auckland": {
       "status": "No Activity",
@@ -24,7 +24,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 8.25,
+      "dbdt_value": 8.24,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -40,7 +40,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 8.96,
+      "dbdt_value": 8.95,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -56,7 +56,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 10.19,
+      "dbdt_value": 10.18,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -72,7 +72,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 11.41,
+      "dbdt_value": 11.4,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -107,7 +107,7 @@
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 1.74,
+        "dbdt": 1.7,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2025-12-24T17:29:10.112902+00:00",
+  "next_update": "2025-12-24T17:48:07.600897+00:00",
   "data_source": "geonet_real",
   "successful_stations": 4,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1766596450112,
-    "process_duration_seconds": 3.613
+    "generated_at_ms": 1766597587600,
+    "process_duration_seconds": 3.59
   }
 }
