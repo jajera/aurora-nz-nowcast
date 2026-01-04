@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-04T13:45:09.608955+00:00",
-  "last_updated": "2026-01-04 13:45:09 UTC",
-  "run_id": "8587f998-1b80-4f7c-83ca-14a88eda69c6",
-  "timestamp_ms": 1767534309608,
+  "timestamp": "2026-01-04T13:54:09.058800+00:00",
+  "last_updated": "2026-01-04 13:54:09 UTC",
+  "run_id": "94a97d8a-7cbe-4d8b-99fd-570a3628f6e5",
+  "timestamp_ms": 1767534849058,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 8.33,
+      "dbdt_value": 9.14,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
@@ -24,7 +24,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 11.39,
+      "dbdt_value": 11.79,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -40,7 +40,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 11.72,
+      "dbdt_value": 11.87,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -56,7 +56,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 12.25,
+      "dbdt_value": 11.98,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
@@ -72,7 +72,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 12.67,
+      "dbdt_value": 11.95,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -89,31 +89,31 @@
     "stations": {
       "AHAM": {
         "name": "Ahaura Magnetic Observatory",
-        "dbdt": 14.51,
+        "dbdt": 17.4,
         "data_points": 0,
         "status": "demo_data"
       },
       "APIM": {
         "name": "API Magnetic Observatory",
-        "dbdt": 2.03,
+        "dbdt": 3.69,
         "data_points": 0,
         "status": "demo_data"
       },
       "EY2M": {
         "name": "Eyrewell Magnetic Observatory",
-        "dbdt": 14.11,
+        "dbdt": 13.98,
         "data_points": 0,
         "status": "demo_data"
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 7.83,
+        "dbdt": 6.47,
         "data_points": 0,
         "status": "demo_data"
       },
       "SMHS": {
         "name": "Scott Base Magnetic Observatory",
-        "dbdt": 13.96,
+        "dbdt": 11.51,
         "data_points": 0,
         "status": "demo_data"
       }
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2026-01-04T14:00:09.608955+00:00",
+  "next_update": "2026-01-04T14:09:09.058800+00:00",
   "data_source": "demo_synthetic",
   "successful_stations": 0,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1767534309608,
-    "process_duration_seconds": 1.264
+    "generated_at_ms": 1767534849058,
+    "process_duration_seconds": 1.654
   }
 }
