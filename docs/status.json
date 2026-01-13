@@ -1,19 +1,18 @@
 {
-  "timestamp": "2026-01-13T01:18:22.701037+00:00",
-  "last_updated": "2026-01-13 01:18:22 UTC",
-  "run_id": "910ab6fc-2a87-46c1-bee5-6b751c8c3cb3",
-  "timestamp_ms": 1768267102701,
+  "timestamp": "2026-01-13T03:12:36.362725+00:00",
+  "last_updated": "2026-01-13 03:12:36 UTC",
+  "run_id": "e0fc16a8-8b8c-4029-ba56-49368c7f08b3",
+  "timestamp_ms": 1768273956362,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 5.4,
+      "dbdt_value": 6.02,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
         "AHAM",
-        "APIM",
         "EY2M",
         "EYWM",
         "SMHS"
@@ -24,12 +23,11 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 4.38,
+      "dbdt_value": 8.94,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
         "AHAM",
-        "APIM",
         "EY2M",
         "EYWM",
         "SMHS"
@@ -40,12 +38,11 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 4.22,
+      "dbdt_value": 9.99,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
         "AHAM",
-        "APIM",
         "EY2M",
         "EYWM",
         "SMHS"
@@ -56,12 +53,11 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 3.95,
+      "dbdt_value": 11.82,
       "threshold_no_activity": 20.0,
       "threshold_possible": 50.0,
       "contributing_stations": [
         "AHAM",
-        "APIM",
         "EY2M",
         "EYWM",
         "SMHS"
@@ -72,12 +68,11 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 3.71,
+      "dbdt_value": 13.68,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
         "AHAM",
-        "APIM",
         "EY2M",
         "EYWM",
         "SMHS"
@@ -89,31 +84,31 @@
     "stations": {
       "AHAM": {
         "name": "Ahaura Magnetic Observatory",
-        "dbdt": 6.08,
+        "dbdt": 9.98,
         "data_points": 0,
         "status": "demo_data"
       },
       "APIM": {
         "name": "API Magnetic Observatory",
-        "dbdt": 7.51,
+        "dbdt": 0.0,
         "data_points": 0,
         "status": "demo_data"
       },
       "EY2M": {
         "name": "Eyrewell Magnetic Observatory",
-        "dbdt": 5.65,
+        "dbdt": 11.83,
         "data_points": 0,
         "status": "demo_data"
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 0.78,
+        "dbdt": 5.35,
         "data_points": 0,
         "status": "demo_data"
       },
       "SMHS": {
         "name": "Scott Base Magnetic Observatory",
-        "dbdt": 2.88,
+        "dbdt": 20.62,
         "data_points": 0,
         "status": "demo_data"
       }
@@ -123,12 +118,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2026-01-13T01:33:22.701037+00:00",
+  "next_update": "2026-01-13T03:27:36.362725+00:00",
   "data_source": "demo_synthetic",
   "successful_stations": 0,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1768267102701,
-    "process_duration_seconds": 1.132
+    "generated_at_ms": 1768273956362,
+    "process_duration_seconds": 1.572
   }
 }
