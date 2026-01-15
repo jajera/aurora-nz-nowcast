@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-15T14:25:14.529954+00:00",
-  "last_updated": "2026-01-15 14:25:14 UTC",
-  "run_id": "6f2bf1b1-c964-4c27-808a-a837e506e265",
-  "timestamp_ms": 1768487114529,
+  "timestamp": "2026-01-15T14:49:07.360856+00:00",
+  "last_updated": "2026-01-15 14:49:07 UTC",
+  "run_id": "eed86fcb-e152-4a62-81c8-54af88a43d04",
+  "timestamp_ms": 1768488547360,
   "regions": {
     "Auckland": {
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 8.01,
+      "dbdt_value": 8.12,
       "threshold_no_activity": 40.0,
       "threshold_possible": 100.0,
       "contributing_stations": [
@@ -24,7 +24,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 11.27,
+      "dbdt_value": 11.19,
       "threshold_no_activity": 30.0,
       "threshold_possible": 75.0,
       "contributing_stations": [
@@ -40,7 +40,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 10.63,
+      "dbdt_value": 10.58,
       "threshold_no_activity": 24.0,
       "threshold_possible": 60.0,
       "contributing_stations": [
@@ -72,7 +72,7 @@
       "status": "No Activity",
       "level": 0,
       "color": "#6b7280",
-      "dbdt_value": 7.92,
+      "dbdt_value": 7.99,
       "threshold_no_activity": 16.0,
       "threshold_possible": 40.0,
       "contributing_stations": [
@@ -95,7 +95,7 @@
       },
       "APIM": {
         "name": "API Magnetic Observatory",
-        "dbdt": 1.29,
+        "dbdt": 1.81,
         "data_points": 0,
         "status": "demo_data"
       },
@@ -107,13 +107,13 @@
       },
       "EYWM": {
         "name": "Eyrewell West Magnetic Observatory",
-        "dbdt": 0.71,
+        "dbdt": 0.18,
         "data_points": 0,
         "status": "demo_data"
       },
       "SMHS": {
         "name": "Scott Base Magnetic Observatory",
-        "dbdt": 1.63,
+        "dbdt": 2.0,
         "data_points": 0,
         "status": "demo_data"
       }
@@ -123,12 +123,12 @@
     "no_activity": 20,
     "possible": 50
   },
-  "next_update": "2026-01-15T14:40:14.529954+00:00",
+  "next_update": "2026-01-15T15:04:07.360856+00:00",
   "data_source": "geonet_real",
   "successful_stations": 2,
   "total_stations": 5,
   "generation_info": {
-    "generated_at_ms": 1768487114529,
-    "process_duration_seconds": 2.34
+    "generated_at_ms": 1768488547360,
+    "process_duration_seconds": 2.143
   }
 }
